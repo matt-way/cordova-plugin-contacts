@@ -160,11 +160,11 @@ public class ContactManager extends CordovaPlugin {
      * @throws JSONException
      */
     public void onActivityResult(int requestCode, int resultCode, final Intent intent) {
-        Log.e(LOG_TAG, "!!! activity result", e);
+        Log.e(LOG_TAG, "!!! activity result");
         if (requestCode == CONTACT_PICKER_RESULT) {
-            Log.e(LOG_TAG, "!!! contact picker result", e);
+            Log.e(LOG_TAG, "!!! contact picker result");
             if (resultCode == Activity.RESULT_OK) {
-                Log.e(LOG_TAG, "!!! picker result OK", e);
+                Log.e(LOG_TAG, "!!! picker result OK");
                 String contactId = intent.getData().getLastPathSegment();
                 // to populate contact data we require  Raw Contact ID
                 // so we do look up for contact raw id first
@@ -185,11 +185,11 @@ public class ContactManager extends CordovaPlugin {
                     Log.e(LOG_TAG, "JSON fail.", e);
                 }
             } else if (resultCode == Activity.RESULT_CANCELED){
-                Log.e(LOG_TAG, "!!! activity cancelled", e);
+                Log.e(LOG_TAG, "!!! activity cancelled");
                 this.callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.NO_RESULT, UNKNOWN_ERROR));
                 return;
             }
-            Log.e(LOG_TAG, "!!! no result in if", e);
+            Log.e(LOG_TAG, "!!! no result in if");
             this.callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.ERROR, UNKNOWN_ERROR));
         }
     }
