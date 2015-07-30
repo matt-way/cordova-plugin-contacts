@@ -233,7 +233,9 @@
     NSNumber* recordId = picker.pickedContactDictionary[kW3ContactId];
     
     if ([recordId isEqualToNumber:[NSNumber numberWithInt:kABRecordInvalidID]]) {
-        result = [CDVPluginResult resultWithStatus:CDVCommandStatus_NO_RESULT];
+        //result = [CDVPluginResult resultWithStatus:CDVCommandStatus_NO_RESULT];
+        int errCode = -1;
+        result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsInt:errCode];
     } else {
         result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:picker.pickedContactDictionary];
     }
