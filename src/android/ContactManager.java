@@ -161,7 +161,6 @@ public class ContactManager extends CordovaPlugin {
      * @throws JSONException
      */
     public void onActivityResult(int requestCode, int resultCode, final Intent intent) {
-        Log.e(LOG_TAG, "!!! activity result");
         if (requestCode == CONTACT_PICKER_RESULT) {
             if (resultCode == Activity.RESULT_OK) {
                 String contactId = intent.getData().getLastPathSegment();
